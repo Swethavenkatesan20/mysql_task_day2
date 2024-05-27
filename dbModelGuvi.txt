@@ -1,0 +1,182 @@
+                         Task: Design DB model for Guvi Zen class
+
+
+Created a DB model for guvi zen class
+Table name : guvi_zenDB
+Collections created:
+	courses
+	lessons
+	users
+	queries
+	tasks
+	codekata
+	assignments
+	submissions
+	feedback
+	announcements
+
+
+test> use guvi_zenDB    //created DB
+switched to db guvi_zenDB
+
+
+1.//created users collection to guvi_zenDB
+
+guvi_zenDB> db.users.insertOne({
+ username: "swetha",                                             		
+ email: "swe@gmail.com", 
+password: 'hashed_password', 
+role: 'student', 
+full_name: 'swetha venkatesan'})
+
+
+
+
+2.//creating course collection to guvi_zenDB
+
+guvi_zenDB> db.courses.insertOne({
+title: 'full stack Development',
+description: 'Learn full stack development from scratch',
+level: 'beginner',
+duration: '3 months'})
+
+
+
+
+3.//inserting collection lesson
+
+guvi_zenDB> db.lessons.insertMany([{
+title: 'Introduction to HTML',	
+content: 'HTML basics and structure',
+order: 1},
+{
+title: 'Introduction to CSS',
+content: 'CSS basics and structure',
+order: 1},
+{
+title: 'Introduction to JAVASCRIPT',
+content: 'JAVASCRIPT basics and structure',
+order: 1},
+{
+title: 'Introduction to REACT JS',
+content: 'REACT JS basics and structure',
+order: 1},
+{
+title: 'Introduction to NodeJS AND MongoDB',
+content: 'NodeJS AND MongoDB basics and structure',
+order: 1}])
+
+
+
+
+4.// Created queries collection and inserted a document to guvi_zenDB:
+
+guvi_zenDB> db.queries.insertOne({
+ username: "swetha",                                             		
+ email: "swe@gmail.com", 
+ lesson: "HTML",  
+ query: "Can you explain the difference between HTML tags and elements? ",
+ timestamp: new Date()
+})
+
+
+
+
+5.// Created task collection and inserting a document to guvi_zenDB:
+
+guvi_zenDB> db.tasks.insertOne({
+  title: 'Complete the HTML lesson',
+  description: 'Complete all exercises in the HTML lesson',
+  course: "HTML and JAVASCRIPT",
+  username: "swetha",                                             
+  due_date: new Date('2024-06-30'),
+  status: 'pending'
+})
+
+
+
+
+6.// Created codekata collection and inserted a document to guvi_zenDB:
+
+guvi_zenDB> db.codekata.insertOne({
+  title: 'HTML Basics Challenge',
+  description: 'Solve basic HTML problems to test your understanding',
+  difficulty: 'easy',
+  course: "JAVASCRIPT",
+  username: "swetha",
+  score: 0,
+  max_score: 100,
+  attempts: 0,
+  timestamp: new Date()
+})
+
+
+
+
+7.// Created assignments collection and inserted a document to guvi_zenDB:
+
+guvi_zenDB> db.assignments.insertOne({
+  title: 'HTML Project',
+  description: 'Create a static website using HTML and CSS',
+  course: "HTML CSS",
+  due_date: new Date('2024-07-15')
+})
+
+
+
+
+8.// Created submissions collection and inserted a document to guvi_zenDB:
+
+guvi_zenDB> db.submissions.insertOne({
+title: 'HTML Project',
+description: 'Create a static website using HTML and CSS',
+username: "swetha",
+submission_link: 'https://github.com/swetha/html-project',
+submitted_at: new Date('2024-07-10'),
+grade: null,
+feedback: null
+})
+
+
+
+
+9.// Created feedback collection and inserted a document to guvi_zenDB:
+
+guvi_zenDB> db.feedback.insertOne({
+ username: "swetha",
+ instructorname: "guvi",
+ comments: 'add more properties!',
+ score: 8,
+ timestamp: new Date('2024-07-12')
+})
+
+
+
+
+10.// Created announcements collection and inserted a document to guvi_zenDB:
+
+guvi_zenDB> db.announcements.insertOne({
+title: 'Welcome to the Full Stack Development Course',
+content: 'We are excited to have you join us on this journey to becoming a full-stack developer!',
+  course : 'MERN Stack',
+  timestamp: new Date()
+})
+
+
+
+
+
+//showing collections created in guvi_zenDB
+guvi_zenDB> show collections
+courses
+lessons
+users
+queries
+tasks
+codekata
+assignments
+submissions
+feedback
+announcements
+
+
