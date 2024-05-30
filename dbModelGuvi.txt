@@ -2,8 +2,8 @@
 
  
 Created a DB model for guvi zen class
-Table name : guvi_zenDB
-Collections created:
+DB name : guvi_zenDB
+Tables created:
 	courses
 	lessons
 	users
